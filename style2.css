@@ -1,0 +1,120 @@
+.header-subtitle {
+  color: #f9744b;
+  font-family: "Lato", sans-serif;
+  padding-right: 10px;
+}
+
+.fas {
+  color: #ffffff;
+}
+
+.layout-fixed {
+  .brand-link {
+    height: 100px;
+  }
+
+  .main-sidebar {
+    background-color: #16555d;
+  }
+}
+
+a.brand-link {
+  display: flex;
+  align-items: center;
+
+  .brand-image {
+    max-height: 40px;
+  }
+}
+
+.brand-text {
+  font-size: 20px;
+}
+
+.user-panel {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  div.info {
+    padding: 10px;
+  }
+
+  .image img {
+    width: 3rem;
+  }
+
+  div.image {
+    padding-left: 0%;
+  }
+}
+
+.role {
+  color: #dfae00;
+  margin: 0;
+  font-size: 20px;
+}
+
+.logout-btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #d9d9d9;
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+}
+
+[class*="sidebar-dark-"] {
+  .sidebar {
+    a {
+      p.logout-btn-t {
+        color: #16555d;
+      }
+    }
+  }
+}
+
+.fa-sign-out-alt {
+  color: #16555d;
+  margin: 0px 5px;
+}
+
+button.logout-btn {
+  color: #16555d;
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+  background-color: #d9d9d9;
+}
+
+button.logout {
+  color: #16555d;
+}
+
+a.nav-link.btn-active {
+  background-color: #c84b25;
+}
+
+[class*="sidebar-dark-"] {
+  .sidebar {
+    a {
+      p {
+        color: white;
+      }
+    }
+  }
+}
+
+.user-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+a.active-link {
+  background-color: #f9744b;
+}
+
+.nav-sidebar > .nav-item {
+  > a.active-link.nav-link.active {
+    background-color: #f9744b;
+  }
+}

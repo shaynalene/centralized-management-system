@@ -1,0 +1,151 @@
+<!-- 
+    TO DO:
+    1. fix barangay logo and title css (account-style.css is in css folder)
+    2. make the header and footer fixed/sticky
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barangay Service Management System</title>
+
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="..\src\barangay-logo.png"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../css/account-style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- div -->
+    <div class="first-div">
+      <p class="title1">BARANGAY SERVICE MANAGEMENT SYSTEM</p>
+    </div>
+
+    <!-- div -->
+    <div class="second-div">
+      <p class="title2">REGISTER</p>
+      <p class="title1"></p>
+    </div>
+
+    <!-- container div for image and login form-->
+    <div class="container">
+      <!-- image div -->
+      <div class="image">
+        <img src="../src/barangay_bg.jpg" />
+      </div>
+      <!-- end of image div -->
+
+      <!-- login form -->
+      <div class="login-div">
+        <!-- service title -->
+        <div class="service d-flex align-items-center p-5">
+          <!-- barangay logo -->
+          <img src="../src/barangay-logo.png" />
+          <p class="login-title">BARANGAY SERVICE MANAGEMENT SYSTEM</p>
+        </div>
+
+        <p class="login-text1">User Register</p>
+        <p class="login-text2 mb-4">
+          Sign up to access our services.<br />
+          Note: You must be a resident of this Barangay.
+        </p>
+        <div class="login-form">
+          <!-- start of login form -->
+          <form action="../php/account-register.php" method="post">
+            <label for="firstname">First Name</label><br />
+            <input
+              class="form-control"
+              type="text"
+              name="firstname"
+              autocomplete="off"
+            /><br />
+
+            <label for="middlename">Middle Name</label><br />
+            <input
+              class="form-control"
+              type="text"
+              name="middlename"
+              autocomplete="off"
+            /><br />
+
+            <label for="lastname">Last Name</label><br />
+            <input
+              class="form-control"
+              type="text"
+              name="lastname"
+              autocomplete="off"
+            /><br />
+
+            <label for="birthday">Birthday</label><br />
+            <input
+              class="form-control"
+              type="date"
+              name="birthday"
+              autocomplete="off"
+            /><br />
+
+            <label for="email">Email</label><br />
+            <input
+              class="form-control"
+              type="email"
+              name="email"
+              placeholder="  johndoe@untitledui.com  "
+              autocomplete="off"
+            /><br />
+
+            <label for="number">Phone Number</label><br />
+            <input
+              class="form-control"
+              type="number"
+              name="number"
+              autocomplete="off"
+            /><br />
+
+            <label for="password">Password</label><br />
+            <input
+              class="form-control"
+              type="password"
+              name="password"
+              placeholder="  ***********  "
+            /><br />
+
+            <label for="confirm_password">Confirm Password</label><br />
+            <input
+              class="form-control"
+              type="password"
+              name="confirm_password"
+              placeholder="  ***********  "
+            /><br />
+
+            <button class="login-button p-2" type="submit">REGISTER</button>
+          </form>
+          <!-- end of login form -->
+        </div>
+        <p class="login-text3">
+          Have an account already?
+          <a href="../pages/account-login.html">Login here</a>
+        </p>
+      </div>
+      <!-- end of login form -->
+    </div>
+    <!-- end of container div -->
+
+    <!-- footer div -->
+    <div class="footer">
+      <p class="footer-text">© 2024 Barangay Service Management System</p>
+    </div>
+  </body>
+</html>

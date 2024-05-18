@@ -1,0 +1,152 @@
+/* hide the scrollbar */
+body::-webkit-scrollbar {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+  }
+  .image {
+    height: 15vh;
+  }
+  img {
+    object-fit: cover;
+  }
+}
+body {
+  background-color: #16555d;
+}
+.title1 {
+  color: #f9744b;
+  font-weight: 500;
+  float: right;
+  padding-right: 3vh;
+  padding-top: 2vh;
+}
+.title2 {
+  color: #102937;
+  font-weight: 500;
+  padding-top: 2vh;
+  padding-left: 5vh;
+  float: left;
+}
+.first-div {
+  background-color: #102937;
+  height: 8vh;
+  width: 100%;
+  align-content: center;
+}
+.second-div {
+  background-color: white;
+  height: 8vh;
+  width: 100%;
+}
+.container {
+  background-color: white;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 65%;
+  height: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  padding-left: 0;
+  justify-content: left;
+}
+.image {
+  background-color: #102937;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.login-div {
+  width: 100%;
+}
+.login-form {
+  width: 80%;
+  margin: auto;
+}
+.login-title {
+  color: #16555d;
+  font-weight: 700;
+  font-size: x-large;
+  margin-bottom: 0;
+}
+.login-text1 {
+  font-weight: 600;
+  font-size: large;
+  margin-left: 10%;
+  margin-bottom: 0;
+}
+.login-text2 {
+  color: gray;
+  margin-left: 10%;
+}
+input {
+  border-radius: 15px;
+  border-color: gray;
+  border-style: double;
+  width: 100%;
+  height: 100%;
+}
+.login-button {
+  background-color: #16555d;
+  color: #f5f5f5;
+  display: block;
+  margin: auto;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+}
+.login-button:hover {
+  background-color: #167f8a;
+  color: rgb(255, 255, 255);
+}
+.login-text3 {
+  padding: 3%;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: #e45b30;
+}
+
+.forgot-button {
+  color: gray;
+  display: block;
+  margin: auto;
+  margin-top: 1vh;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+}
+.forgot-button:hover {
+  color: black;
+}
+
+/*fix here*/
+.service {
+  width: 75%;
+  display: flex;
+  gap: 1em;
+}
+.service img {
+  max-width: 10vh;
+}
+
+.footer {
+  background-color: #102937;
+  height: 5vh;
+  width: 100%;
+  padding: 5px 10px 0 0;
+}
+.footer-text {
+  font-weight: 500;
+  color: #e45b30;
+  float: right;
+  margin: 0;
+}
