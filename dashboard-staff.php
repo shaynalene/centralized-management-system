@@ -401,17 +401,17 @@ if ($result_male->num_rows > 0) {
                                 <div class="card-body">
                                     <div class="time pb-5">
                                         <i class="fas fa-clock"></i>
-                                        <div class="time-title"><?= htmlspecialchars($announcement['time_posted']) ?></div>
+                                        <div class="time-title"><?= htmlspecialchars($announcement['Time_Posted']) ?></div>
                                     </div>
                                     <div class="card-title-2 pb-3">
-                                        <?= htmlspecialchars($announcement['title']) ?>
+                                        <?= htmlspecialchars($announcement['Title']) ?>
                                     </div>
                                     <p class="card-text pb-3 text-justify">
-                                        <?= htmlspecialchars($announcement['content']) ?>
+                                        <?= htmlspecialchars($announcement['Content']) ?>
                                     </p>
                                     <div class="learn-more">
                                     <p class="card-text pb-3 text-justify"> Created By: 
-                                        <?= htmlspecialchars($announcement['created_by']) ?>
+                                        <?= htmlspecialchars($announcement['Created_By']) ?>
                                         </p>
                                     </div>
                                 </div>

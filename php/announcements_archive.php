@@ -3,7 +3,7 @@
 include 'server.php';
 
 // Query to fetch announcements
-$sql = "SELECT title, time_posted, content, created_by FROM announcements_records";
+$sql = "SELECT Title, Time_Posted, Content, Created_By FROM announcements";
 $result = $conn->query($sql);
 
 $announcements = [];
