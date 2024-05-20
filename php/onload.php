@@ -24,6 +24,12 @@ $birthday = $row["birthday"];
 $email = $row["email"];
 $number = $row["contact_number"];
 
+//session
+$_SESSION['firstname'] = $firstname;
+$_SESSION['middlename'] = $middlename;
+$_SESSION["lastname"] = $lastname;
+$_SESSION["email"] = $email;
+
 //account role
 $account_id = $_SESSION["account_id"];
 $stmt = $conn->prepare("SELECT * FROM accounts_list AL

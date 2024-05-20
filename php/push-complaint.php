@@ -25,8 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $file_extension = pathinfo($filename, PATHINFO_EXTENSION);
 
-    $stmt = $conn->prepare("INSERT INTO complaint_records (Name_Of_Complainant, Name_Of_Respondent, Address_Of_The_Respondent, Summary_Of_The_Complaint, complaint_photo, filename, filetype, account_id VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param('sssssi',  $Name_Of_Complainant, $Name_Of_Respondent, $Address_Of_The_Respondent, $Summary_Of_The_Complaint, $image, $filename,  $accountID);
+    $stmt = $conn->prepare("INSERT INTO complaint_records (Name_Of_Complainant, Name_Of_Respondent, Address_Of_The_Respondent, Summary_Of_The_Complaint, complaint_photo, filename, filetype, account_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param('sssssssi',  $Name_Of_Complainant, $Name_Of_Respondent, $Address_Of_The_Respondent, $Summary_Of_The_Complaint, $image, $filename, $imageType,  $accountID);
     $stmt->execute();
     $stmt->close();
 
