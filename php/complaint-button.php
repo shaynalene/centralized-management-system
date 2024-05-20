@@ -41,7 +41,7 @@ if (isset($_POST['disapproveComplaint'])){
     // EMAIL CONTENTS
     $mail->isHTML(true);                                
     $mail->Subject = 'Barangay 1234 - Filed Complaint Status';
-    $mail->Body    = 'Good Day, ' . $firstname . " " . $lastname . '! ' . '<br>' . '<br>' . 'The authorized staff from Barangay 1234 has reviewed and DISAPPROVED your filed complaint ' . '<br>' . 'Your complaint number is #' . $complaint_id. '<br>'. 'You may go to the Barangay 1234 Hall to inquire about your filed complaint'. '<br>'.'<br>'. 'For more details regarding your complaint, you may access Baragay 1234 Service Management System using the link below: ' . '<br>'. 'http://localhost/Ticketing-System/pages/account-login.html';
+    $mail->Body    = 'Good Day, ' . $firstname . " " . $lastname . '! ' . '<br>' . '<br>' . 'The authorized staff from Barangay 1234 has reviewed your filed complaint. We regret to inform you that your complaint has been DENIED by the Barangay staff.' . '<br>' . 'Your complaint number is #' . $complaint_id. '<br>'. 'You may go to the Barangay 1234 Hall to inquire about your filed complaint'. '<br>'.'<br>'. 'For more details regarding your complaint, you may access Baragay 1234 Service Management System using the link below: ' . '<br>'. 'http://localhost/Ticketing-System/pages/account-login.html';
     $mail->send();
     }
     catch (Exception $e) {}
