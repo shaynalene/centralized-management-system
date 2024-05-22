@@ -113,7 +113,7 @@ include '../php/onload.php';
         <!-- Brand Logo -->
         <a href="../dashboard-admin.php" class="brand-link">
           <img
-            src="..\src/barangay-logo.png"
+            src="../src/barangay-logo.png"
             alt="AdminLTE Logo"
             class="brand-image img-circle elevation-3"
             style="opacity: 0.8"
@@ -127,16 +127,18 @@ include '../php/onload.php';
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel mt-3 mb-3 pt-3 pb-3 d-flex">
             <div class="image">
-            <?php echo $display ?>
+              <a href="../pages/admin-account-information.php">
+                <?php echo $display ?>
+              </a>
             </div>
+
             <div class="info pt-3">
-              <a href="#" class="user-name d-block fw-bold text-center fs-4"
+              <a href="../pages/admin-account-information.php" class="user-name d-block fw-bold text-center fs-4 text-wrap"
                 ><?php echo $name ?></a
               >
               <p class="role text-center text-uppercase"><?php echo $role ?></p>
             </div>
           </div>
-
           <!-- Sidebar Menu -->
           <nav class="mt-2">
             <ul
@@ -154,6 +156,7 @@ include '../php/onload.php';
                   </form>
                 </a>
               </li>
+
               <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
               <li class="nav-item">
@@ -163,7 +166,7 @@ include '../php/onload.php';
                 </a>
               </li>
 
-              <li class="nav-item">
+              <li class="nav-item menu-open">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-info-circle"></i>
                   <p>
@@ -191,7 +194,7 @@ include '../php/onload.php';
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../pages/admin-id-requests.php" class="nav-link">
+                    <a href="../pages/admin-id-requests.php" class="active-link nav-link active">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Barangay ID Requests</p>
                     </a>
@@ -211,7 +214,7 @@ include '../php/onload.php';
                 </ul>
               </li>
 
-              <li class="nav-item  menu-open">
+              <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-info-circle"></i>
                   <p>
@@ -227,7 +230,7 @@ include '../php/onload.php';
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../pages/admin_side-resident_population.php" class="active-link nav-link active">
+                    <a href="../pages/admin_side-resident_population.php" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p class="text-center">Resident Population</p>
                     </a>

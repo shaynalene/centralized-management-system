@@ -61,13 +61,13 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $mail->Port       = 587;                                    
 
                 // EMAIL DETAILS
-                $mail->setFrom('bus.ticketing.system.co@gmail.com', 'Bus Ticketing System Co');
+                $mail->setFrom('barangay.service.management@gmail.com', 'Barangay Service Management');
                 $mail->addAddress($email, $name);     // Add a recipient
 
                 // EMAIL CONTENTS
                 $mail->isHTML(true);                                
-                $mail->Subject = 'Bus Ticketing System Login Details';
-                $mail->Body    = 'Hi, ' . $firstname . " " . $lastname . '! ' . '<br>' . '<br>' . 'You have successfully registered an account. To continue, click the link below: ' . '<br>' . 'http://localhost/Ticketing-System/pages/login-usr-page.html';
+                $mail->Subject = 'Barangay Service Management Login Details';
+                $mail->Body    = 'Hi, ' . $firstname . " " . $lastname . '! ' . '<br>' . '<br>' . 'You have successfully registered an account. To continue, click the link below: ' . '<br>' . 'http://localhost/Centralized-Service-System/pages/account-login.html';
                 $mail->send();
                 echo '<script type="text/javascript">
                         window.location = "../pages/login-usr-page.html";

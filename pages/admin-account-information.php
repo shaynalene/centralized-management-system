@@ -28,20 +28,23 @@ if (isset($_POST['submit_image'])){
     $result = $stmt->get_result();
     //if there is a pic already, update the data
     if ($result->num_rows === 1) {
-      $stmt = $conn->prepare("UPDATE image_avatar SET filename = '$filename' and image = '$image' WHERE account_id = $account_id");
-      $conn->query($sql);
+      $stmt = $conn->prepare("UPDATE image_avatar SET filename = ?, avatar = ? WHERE account_id = ?");
+      $stmt->bind_param("ssi", $filename, $image, $account_id);
+      $stmt->execute();
       echo '<script>
                     alert("Image Updated");
+                    window.location = "../pages/admin-account-information.php";
                 </script>';
     }
     //if wala pa
     else{
-      $stmt = $conn->prepare("INSERT INTO image_avatar (account_id, filename, avatar) VALUES (?, ?, ?)");
-      $stmt->bind_param('iss', $account_id, $filename, $image);
+      $stmt = $conn->prepare("UPDATE image_avatar SET filename = ?, avatar = ? WHERE account_id = ?");
+      $stmt->bind_param("ssi", $filename, $image, $account_id);
       $stmt->execute();
       $stmt->close();
       echo '<script>
                     alert("Image Uploaded");
+                    window.location = "../pages/admin-account-information.php";
                 </script>';
     }
 }
@@ -530,10 +533,10 @@ if (isset($_POST['submit_image'])){
                 </div>
                 <!-- end of container div -->
 
-                <!-- footer div -->
+                <!-- footer div 
                 <div class="account-footer">
                     <p class="account-footer-text">© 2024 Barangay Service Management System</p>
-                </div>
+                </div>-->
 
 
 

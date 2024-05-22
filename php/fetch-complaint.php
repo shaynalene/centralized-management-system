@@ -117,7 +117,7 @@ if ($result->num_rows > 0) {
                                             <div class='form-group'>
                                                 <label for='editStatus'>Status</label>
                                                 <input type='text' class='form-control' id='editStatus' name='Status' value='" . htmlspecialchars($row['Status']) . "'readonly/>
-                                                <input type='hidden' name='acc_id' value='" . htmlspecialchars($row['Account_ID']) . "';
+                                                <input type='hidden' name='acc_id' value='" . htmlspecialchars($row['Account_ID']) . "'>
                                             </div>
 
                                             

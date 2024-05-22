@@ -235,7 +235,7 @@ include "../php/onload.php";
                                                         </tr>
                                                     </thead>
                                                     <tbody id="transactionBody">
-                                                        <?php include '../php/staff_fetch-complaint.php'; ?>
+                                                        <?php include '../php/fetch-complaint.php'; ?>
                                                     </tbody>
                                                 </table>
                                             </div>
