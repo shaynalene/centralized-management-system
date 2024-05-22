@@ -85,7 +85,7 @@ if ($result->num_rows > 0) {
                                             </div>
                                             <div class='form-group'>
                                                 <label for='editFirstName'>Commercial Name:</label>
-                                                <input type='text' class='form-control' id='editCommercialName' name='Commercial_Name' value='" . htmlspecialchars($row['Commercial_Name']) . "'/>
+                                                <input type='text' class='form-control' id='editCommercialName' name='Commercial_Name' value='" . htmlspecialchars($row['Commercial_Name']) . "' readonly/>
                                             </div>
                                             <div class='form-group'>
                                                 <label for='editFirstName'>First Name:</label>
@@ -105,11 +105,11 @@ if ($result->num_rows > 0) {
                                             </div>
                                             <div class='form-group'>
                                                 <label for='editLocation'>Location:</label>
-                                                <input type='text' class='form-control' id='editLocation' name='Location' value='" . htmlspecialchars($row['Location']) . "'/>
+                                                <input type='text' class='form-control' id='editLocation' name='Location' value='" . htmlspecialchars($row['Location']) . "' readonly/>
                                             </div>
                                             <div class='form-group'>
                                             <label for='editValidity'>Validity:</label>
-                                            <input type='date' class='form-control' id='editValidty' name='Validity' value='" . htmlspecialchars($row['Validity']) . "'/>
+                                            <input type='date' class='form-control' id='editValidty' name='Validity' value='" . htmlspecialchars($row['Validity']) . "' readonly/>
                                         </div>
                                             <div class='form-group'>
                                                 <input type='text' class='form-control' value='". $update_message . "' readonly/>

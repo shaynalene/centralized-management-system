@@ -51,6 +51,7 @@ if ($result->num_rows > 0) {
                 $image = $row['complaint_photo'];
                 $file_extension = pathinfo($row["filename"], PATHINFO_EXTENSION);
                 
+                
                 // Encode the image data
                 $imageBase64 = base64_encode($image);
 
@@ -61,7 +62,6 @@ if ($result->num_rows > 0) {
                 echo "<td>" . htmlspecialchars($row['Name_Of_Respondent']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['Address_Of_The_Respondent']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['Summary_Of_The_Complaint']) . "</td>";
-                echo "<td>" . htmlspecialchars($row['Account_ID']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['Status']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['Date_Submitted']) . "</td>";
 
@@ -81,7 +81,7 @@ if ($result->num_rows > 0) {
                                         </button>
                                     </div>
                                     <div class='modal-body'>
-                                    <form id='editForm" . htmlspecialchars($row['Complaint_ID']) . "' method='POST' action='../php/staff_complaint-button.php' enctype='multipart/form-data'>
+                                    <form id='editForm" . htmlspecialchars($row['Complaint_ID']) . "' method='POST' action='../php/complaint-button.php' enctype='multipart/form-data'>
                                             <input type='hidden' name='Complaint_ID' value='" . htmlspecialchars($row['Complaint_ID']) . "'/>
                                             <div class='form-group'>
                                                 <label for='editPhoto'>Existing Photo:</label>
@@ -93,10 +93,6 @@ if ($result->num_rows > 0) {
                                             <div class='form-group'>
                                                 <label for='editComplaint_ID'>Complaint ID:</label>
                                                 <input type='text' class='form-control' id='editComplaint_ID' name='Complaint_ID' value='" . htmlspecialchars($row['Complaint_ID']) . "'readonly/>
-                                            </div>
-                                            <div class='form-group'>
-                                                <label for='editAccount_ID_ID'>Account ID:</label>
-                                                <input type='text' class='form-control' id='editAccount_ID' name='Account_ID' value='" . htmlspecialchars($row['Account_ID']) . "'readonly/>
                                             </div>
                                             <div class='form-group'>
                                                 <label for='editComplainant'>Complainant:</label>
@@ -121,6 +117,7 @@ if ($result->num_rows > 0) {
                                             <div class='form-group'>
                                                 <label for='editStatus'>Status</label>
                                                 <input type='text' class='form-control' id='editStatus' name='Status' value='" . htmlspecialchars($row['Status']) . "'readonly/>
+                                                <input type='hidden' name='acc_id' value='" . htmlspecialchars($row['Account_ID']) . "';
                                             </div>
 
                                             

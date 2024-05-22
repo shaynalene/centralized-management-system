@@ -14,14 +14,14 @@ $email = $_SESSION["email"];
 
 //disapprove request
 if (isset($_POST['disapproveComplaint'])){
-    $account_id = $_SESSION["account_id"];
+    $account_id = $_POST["acc_id"];
     $complaint_id = $_POST["Complaint_ID"];
     
-    $status = 'disapproved';
+    $status = 'Disapproved';
     $stmt = $conn->prepare("UPDATE complaint_records SET status = ? WHERE Account_ID = ? and Complaint_ID =?");
     $stmt->bind_param("sii", $status, $account_id, $complaint_id);
     $stmt->execute();
-    //send the disapproved email from admin to user
+    //send the disapproved email from staff to user
     include "../php/generate-email.php";
     try {
     // Server settings
@@ -35,7 +35,7 @@ if (isset($_POST['disapproveComplaint'])){
     $mail->Port       = 587;                                    
     
     // EMAIL DETAILS
-    $mail->setFrom('bus.ticketing.system.co@gmail.com', 'Bus Ticketing System Co');
+    $mail->setFrom('barangay.service.management@gmail.com', 'Barangay Service Management');
     $mail->addAddress($email, $name);     // Add a recipient
     
     // EMAIL CONTENTS
@@ -47,22 +47,22 @@ if (isset($_POST['disapproveComplaint'])){
     catch (Exception $e) {}
 
     echo '<script>
-            alert("Request Disapproved" $complaint_id);
-            window.location = "../pages/staff_side-complaint_records.php";
+            alert("Request Disapproved");
+            window.location = "../pages/staff-complaint_records.php";
           </script>';
     exit();
 }
 
 //approve request
 if (isset($_POST['approveComplaint'])){
-    $account_id = $_SESSION["account_id"];
+    $account_id = $_POST["acc_id"];
     $complaint_id = $_POST["Complaint_ID"];
 
-    $status = 'approved';
+    $status = 'Approved';
     $stmt = $conn->prepare("UPDATE complaint_records SET status = ? WHERE Account_ID = ? and Complaint_ID =?");
     $stmt->bind_param("sii", $status, $account_id, $complaint_id);
     $stmt->execute();
-    //send the approved email from admin to user
+    //send the approved email from staff to user
     include "../php/generate-email.php";
       try {
       // Server settings
@@ -76,7 +76,7 @@ if (isset($_POST['approveComplaint'])){
       $mail->Port       = 587;                                    
       
       // EMAIL DETAILS
-      $mail->setFrom('bus.ticketing.system.co@gmail.com', 'Bus Ticketing System Co');
+      $mail->setFrom('barangay.service.management@gmail.com', 'Barangay Service Management');
       $mail->addAddress($email, $name);     // Add a recipient
       
       // EMAIL CONTENTS
@@ -89,7 +89,7 @@ if (isset($_POST['approveComplaint'])){
 
     echo '<script>
             alert("Request Approved");
-            window.location = "../pages/staff_side-complaint_records.php";
+            window.location = "../pages/staff-complaint_records.php";
           </script>';
     exit();
 }

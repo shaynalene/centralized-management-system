@@ -98,7 +98,7 @@ include "../php/onload.php";
         <!-- Brand Logo -->
         <a href="../dashboard-staff.php" class="brand-link">
           <img
-            src="../src/barangay-logo.png"
+            src="..\src/barangay-logo.png"
             alt="AdminLTE Logo"
             class="brand-image img-circle elevation-3"
             style="opacity: 0.8"
@@ -112,20 +112,18 @@ include "../php/onload.php";
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel mt-3 mb-3 pt-3 pb-3 d-flex">
             <div class="image">
-              <a href="../pages/staff-account-information.php">
-                <?php echo $display ?>
-              </a>
+            <?php echo $display ?>
             </div>
-
             <div class="info pt-3">
-              <a href="../pages/staff-account-information.php" class="user-name d-block fw-bold text-center fs-4 text-wrap"
+              <a href="#" class="user-name d-block fw-bold text-center fs-4"
                 ><?php echo $name ?></a
               >
               <p class="role text-center text-uppercase"><?php echo $role ?></p>
             </div>
           </div>
+
           <!-- Sidebar Menu -->
-          <nav class="mt-2">
+           <nav class="mt-2">
             <ul
               class="nav nav-pills nav-sidebar flex-column"
               data-widget="treeview"
@@ -141,7 +139,6 @@ include "../php/onload.php";
                   </form>
                 </a>
               </li>
-
               <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
               <li class="nav-item">
@@ -161,7 +158,7 @@ include "../php/onload.php";
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="../pages/staff-complaint_records.php" class="active-link nav-link active">
+                    <a href="../pages/staff_side-complaint_records.php" class="active-link nav-link active">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Complaint Records</p>
                     </a>
@@ -173,7 +170,7 @@ include "../php/onload.php";
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../pages/staff-clearance-requests.php" class="nav-link">
+                    <a href="../pages/staff-clearance-requests.php" class="nav-link"">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Clearance Requests</p>
                     </a>
@@ -185,7 +182,7 @@ include "../php/onload.php";
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="../pages/staff-cert-requests.php" class="nav-link">
+                    <a href="../pages/staff-cert-requests.php" class="nav-link"">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Cert. of Residency Requests</p>
                     </a>
@@ -205,17 +202,18 @@ include "../php/onload.php";
         <!-- /.sidebar -->
       </aside>
 
+
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
 
-      <!-- Main content -->
-      <section class="content">
+        <!-- Main content -->
+        <section class="content">
           <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
             <div class="row">
                         <div class="trans-title col-md-12 pt-5 pl-5">
-                            Complaint Records
+                            COMPLAINT RECORDS
                         </div>
                         <div class="col-md-12 p-5">
                             <div class="card">
@@ -226,34 +224,18 @@ include "../php/onload.php";
                                                 <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" aria-describedby="example1_info">
                                                     <thead class="table-head">
                                                         <tr>
-                                                            <th>Complaint ID</th>
+                                                          <th>Complaint_ID</th>
                                                             <th>Complainant</th>
                                                             <th>Respondent</th>
                                                             <th>Address of the Respondent</th>
                                                             <th>Complaint Summary</th>
+                                                            <th>Status</th>
+                                                            <th>Date Submitted</th>
+                                                            <th>Actions</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody id="transactionBody">
-                                                    <?php 
-
-$sql = "SELECT Complaint_ID, Name_of_Complainant, Name_of_Respondent, Address_Of_The_Respondent, Summary_Of_The_Complaint FROM complaint_records";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        echo "<tr>";
-        echo "<td>" . htmlspecialchars($row['Complaint_ID']) . "</td>";
-        echo "<td>" . htmlspecialchars($row['Name_of_Complainant']) . "</td>";
-        echo "<td>" . htmlspecialchars($row['Name_of_Respondent']) . "</td>";
-        echo "<td>" . htmlspecialchars($row['Address_Of_The_Respondent']) . "</td>";
-        echo "<td>" . htmlspecialchars($row['Summary_Of_The_Complaint']) . "</td>";
-        echo "</tr>";
-    }
-} else {
-    echo "<tr><td colspan='4'>No results found</td></tr>";
-}
-$conn->close();
-?>
+                                                        <?php include '../php/staff_fetch-complaint.php'; ?>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -266,7 +248,6 @@ $conn->close();
           </div>
         </section>
 
-
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
           <!-- Control sidebar content goes here -->
@@ -275,31 +256,6 @@ $conn->close();
       </div>
       <!-- ./wrapper -->
     </div>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- jQuery -->
     <script src="../plugins/jquery/jquery.min.js"></script>
@@ -336,5 +292,52 @@ $conn->close();
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="../dist/js/pages/dashboard.js"></script>
 
+    <script src="../script.js"></script>
+
+    <!-- DataTables  & Plugins -->
+    <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="../plugins/jszip/jszip.min.js"></script>
+    <script src="../plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="../plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+    <!-- Page specific script -->
+    <script>
+      $(function () {
+        $("#example1")
+          .DataTable({
+            responsive: true,
+            lengthChange: false,
+            autoWidth: false,
+            buttons: [
+              {
+                extend: "colvis",
+                text: "Filter",
+                className: "custom-colvis-button", // Add custom class
+              },
+            ],
+          })
+          .buttons()
+          .container()
+          .appendTo("#example1_wrapper .col-md-6:eq(0)");
+
+        $("#example2").DataTable({
+          paging: true,
+          lengthChange: false,
+          searching: false,
+          ordering: true,
+          info: true,
+          autoWidth: false,
+          responsive: true,
+        });
+      });
+    </script>
   </body>
 </html>
