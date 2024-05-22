@@ -17,4 +17,18 @@ if (isset($_POST['updateInfo'])){
           </script>';
     exit();
   }
+
+//update account information: account role
+if (isset($_POST['changeRole'])){
+    $account_id = $_POST["acc_id"];
+    $updatedRole = $_POST['role'];
+    $stmt = $conn->prepare("UPDATE accounts_list SET role_id = ? WHERE account_id = ?");
+    $stmt->bind_param("ii", $updatedRole, $account_id);
+    $stmt->execute();
+    echo '<script>
+            alert("Account Role Updated");
+            window.location = "../pages/accounts-list.php";
+          </script>';
+    exit();
+}
 ?>

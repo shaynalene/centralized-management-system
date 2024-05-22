@@ -86,7 +86,7 @@ if (isset($_POST['forgot'])){
         $email = $row["email"];
         $firstname = $row["firstname"];
         $lastname = $row["lastname"];
-        $name = $firstname;
+        $name = $firstname . ' ' . $lastname;
         
         
         //send the forgot password email   
@@ -103,13 +103,13 @@ if (isset($_POST['forgot'])){
         $mail->Port       = 587;                                    
         
         // EMAIL DETAILS
-        $mail->setFrom('bus.ticketing.system.co@gmail.com', 'Bus Ticketing System Co');
+        $mail->setFrom('barangay.service.management@gmail.com', 'Barangay Service Management');
         $mail->addAddress($email, $name);     // Add a recipient
         
         // EMAIL CONTENTS
         $mail->isHTML(true);                                
         $mail->Subject = 'Forgot Password';
-        $mail->Body    = 'Hi, ' . $firstname . " " . $lastname . '! ' . '<br>' . '<br>' . 'To change your password, click the link below: ' . '<br>' . 'http://localhost/Ticketing-System/pages/forgot-password.php';
+        $mail->Body    = 'Hi, ' . $name . '! ' . '<br>' . '<br>' . 'To change your password, click the link below: ' . '<br>' . 'http://localhost/Centralized-Service-System/pages/forgot-password.php';
         $mail->send();
         }
         catch (Exception $e) {}

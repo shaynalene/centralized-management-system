@@ -336,11 +336,11 @@ if ($result->num_rows > 0) {
         echo "<td class='text-break'>" . htmlspecialchars($email) . "</td>";
         echo "<td class='text-break'>" . htmlspecialchars($number) . "</td>";
         echo "<td class='text-break'>" . htmlspecialchars($role) . "</td>";
-        echo "<td><button type='button' class='btn btn-success' data-toggle='modal' data-target='#exampleModalCenter" . htmlspecialchars($row['account_id']) . "'>View</button></td>";
+        echo "<td><button type='button' class='btn btn-success' data-toggle='modal' data-target='#view" . htmlspecialchars($row['account_id']) . "'>View</button></td>";
     echo "</tr>";
 
     echo "<!-- Modal -->
-          <div class='modal fade' id='exampleModalCenter" . htmlspecialchars($row['account_id']) . "' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
+          <div class='modal fade' id='view" . htmlspecialchars($row['account_id']) . "' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
             <div class='modal-dialog modal-dialog-centered' role='document'>
               <div class='modal-content'>
                 <div class='modal-header'>
@@ -353,7 +353,7 @@ if ($result->num_rows > 0) {
                   <form id='editForm" . htmlspecialchars($row['account_id']) . "' method='post' action='../php/account-update.php'>
                   <div class='form-group'>
                   $display_avatar
-                </div>
+                  </div>
                   <div class='form-group'>
                       <label for='editEmail$name'>Name:</label>
                       <input type='text' class='form-control' id='editEmail$name' name='name' autocomplete='off' value='$name' readonly='true'>
@@ -371,14 +371,21 @@ if ($result->num_rows > 0) {
                       <input type='text' class='form-control' id='editEmail$number' name='number' autocomplete='off' value='$number' readonly='true'>
                     </div>
                     <div class='form-group'>
-                      <label for='editEmail$role'>Account Role:</label>
+                      <label for='editEmail$role'>Current Account Role:</label>
                       <input type='text' class='form-control' id='editEmail$role' name='role' autocomplete='off' value='$role' readonly='true'>
                     </div>
-                    <input type='hidden' name='account_id' value='$account_id'>
-                </div>
-                <div class='modal-footer'>
-                  <button type='button' class='btn btn-secondary' name='changeRole'>Change Account Role</button>
-                  <!--<button type='submit' class='btn btn-primary' name='updateInfo'>Save Changes</button>-->
+                    <div class='form-group'>
+                      <label for='edit$role'>Change Account Role:</label>
+                      <select name='role' id='role'>
+                        <option value='1'>User</option>
+                        <option value='2'>Staff</option>
+                        <option value='3'>Admin</option>
+                      </select>
+                    </div>
+                    <input type='hidden' name='acc_id' value='$acc_id'>
+                  </div>
+                  <div class='modal-footer'>
+                  <button type='submit' class='btn btn-primary' name='changeRole'>Change Account Role</button>
                   </form>
                 </div>
               </div>
