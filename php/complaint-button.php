@@ -47,7 +47,7 @@ if (isset($_POST['disapproveComplaint'])){
     catch (Exception $e) {}
 
     echo '<script>
-            alert("Request Disapproved" $complaint_id);
+            alert("Request Disapproved");
             window.location = "../pages/admin_side-complaint_records.php";
           </script>';
     exit();
