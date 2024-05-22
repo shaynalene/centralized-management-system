@@ -1,22 +1,25 @@
 <?php
+session_start();
 // Establish connection to the database
 include "../php/server.php";
+include "../php/onload.php";
 
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
-    $Name_Of_Complainant = $_POST['Name_Of_Complainant'];
     $Name_Of_Respondent = $_POST['Name_Of_Respondent'];
     $Address_Of_The_Respondent = $_POST['Address_Of_The_Respondent'];
     $Summary_Of_The_Complaint = $_POST['Summary_Of_The_Complaint'];
-    $accountID = 112;//INSERT ACCOUNT ID
+    $accountID = $_SESSION["account_id"];
+    $name = $_SESSION["name"];
 
 
     // Sanitize and validate input data (for demonstration, you can use more robust validation methods)
-    $Name_Of_Complainant = mysqli_real_escape_string($conn, $Name_Of_Complainant);
+    $Name_Of_Complainant = $name;
     $Name_Of_Respondent = mysqli_real_escape_string($conn, $Name_Of_Respondent);
     $$Address_Of_The_Respondent = mysqli_real_escape_string($conn, $Address_Of_The_Respondent);
     $Summary_Of_The_Complaint = mysqli_real_escape_string($conn, $Summary_Of_The_Complaint);
+    $status = "Pending";
  
     $file = $_FILES['image'];
     $filename = $file['name'];
@@ -25,8 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $file_extension = pathinfo($filename, PATHINFO_EXTENSION);
 
-    $stmt = $conn->prepare("INSERT INTO complaint_records (Name_Of_Complainant, Name_Of_Respondent, Address_Of_The_Respondent, Summary_Of_The_Complaint, complaint_photo, filename, filetype, account_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param('sssssssi',  $Name_Of_Complainant, $Name_Of_Respondent, $Address_Of_The_Respondent, $Summary_Of_The_Complaint, $image, $filename, $imageType,  $accountID);
+    $stmt = $conn->prepare("INSERT INTO complaint_records (Name_Of_Complainant, Name_Of_Respondent, Address_Of_The_Respondent, Summary_Of_The_Complaint, complaint_photo, filename, filetype, account_id, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param('sssssssis',  $Name_Of_Complainant, $Name_Of_Respondent, $Address_Of_The_Respondent, $Summary_Of_The_Complaint, $image, $filename, $imageType,  $accountID, $status);
     $stmt->execute();
     $stmt->close();
 

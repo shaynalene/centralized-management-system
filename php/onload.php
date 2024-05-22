@@ -28,6 +28,7 @@ $number = $row["contact_number"];
 $_SESSION['firstname'] = $firstname;
 $_SESSION['middlename'] = $middlename;
 $_SESSION["lastname"] = $lastname;
+$_SESSION["name"] = $name;
 $_SESSION["email"] = $email;
 
 //account role

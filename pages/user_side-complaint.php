@@ -247,16 +247,6 @@ include '../php/onload.php';
                       </div>
                       <hr class="my-4" />
                       <div class="form-group">
-                        <label for="Name_Of_Complainant">Name of Complainant</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="Name_Of_Complainant"
-                          name="Name_Of_Complainant"
-                          placeholder="Enter Name of Complainant"
-                        />
-                      </div>
-                      <div class="form-group">
                         <label for="Name_Of_Respondent">Name of Respondent</label>
                         <input
                           type="text"

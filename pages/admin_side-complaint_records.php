@@ -280,7 +280,6 @@ include '../php/onload.php';
                                                             <th>Respondent</th>
                                                             <th>Address of the Respondent</th>
                                                             <th>Complaint Summary</th>
-                                                            <th>Account ID</th>
                                                             <th>Status</th>
                                                             <th>Date Submitted</th>
                                                             <th>Actions</th>
