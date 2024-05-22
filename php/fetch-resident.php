@@ -101,16 +101,19 @@ if ($result->num_rows > 0) {
                                             </div>
                                             <div class='form-group'>
                                                 <label for='editBirthdate'>Birthdate:</label>
-                                                <input type='text' class='form-control' id='editBirthdate' name='Birthdate' value='" . htmlspecialchars($row['Birthdate']) . "'/>
+                                                <input type='date' class='form-control' id='editBirthdate' name='Birthdate' value='" . htmlspecialchars($row['Birthdate']) . "'/>
                                             </div>
                                             <div class='form-group'>
                                                 <label for='editGender'>Gender:</label>
-                                                <input type='text' class='form-control' id='editGender' name='Gender' value='" . htmlspecialchars($row['Gender']) . "'/>
+                                                <select id='editGender' class='form-control' name='Gender' value='" . htmlspecialchars($row['Gender']) . "'/>
+                                                <option value='Male'>Male</option>
+                                                <option value='Female'>Female</option>
+                                                </select>  
                                             </div>
                                             <div class='form-group'>
                                             <label for='editPhone'>Phone:</label>
                                             <input type='text' class='form-control' id='editPhone' name='Phone' value='" . htmlspecialchars($row['Phone']) . "'/>
-                                        </div>
+                                            </div>
                                             <div class='form-group'>
                                                 <label for='editAddress'>Address:</label>
                                                 <input type='text' class='form-control' id='editAddress' name='Address' value='" . htmlspecialchars($row['Address']) . "'/>
