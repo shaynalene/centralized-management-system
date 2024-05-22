@@ -2,6 +2,10 @@
 session_start();
 include "../php/server.php";
 include "../php/onload.php";
+
+if($_SESSION["role"] != 2){
+  exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -235,7 +239,7 @@ include "../php/onload.php";
                                                         </tr>
                                                     </thead>
                                                     <tbody id="transactionBody">
-                                                        <?php include '../php/fetch-complaint.php'; ?>
+                                                        <?php include '../php/staff_fetch-complaint.php'; ?>
                                                     </tbody>
                                                 </table>
                                             </div>

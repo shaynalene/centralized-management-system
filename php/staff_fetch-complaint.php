@@ -117,7 +117,7 @@ if ($result->num_rows > 0) {
                                             <div class='form-group'>
                                                 <label for='editStatus'>Status</label>
                                                 <input type='text' class='form-control' id='editStatus' name='Status' value='" . htmlspecialchars($row['Status']) . "'readonly/>
-                                                <input type='hidden' name='acc_id' value='" . htmlspecialchars($row['Account_ID']) . "';
+                                                <input type='hidden' name='acc_id' value='" . htmlspecialchars($row['Account_ID']) . "'>
                                             </div>
 
                                             
@@ -125,8 +125,8 @@ if ($result->num_rows > 0) {
                                                 <input type='text' class='form-control' value='". $update_message . "' readonly/>
                                             </div>
                                             <div class='modal-footer'>
-                                                <button type='submit' class='btn btn-success' name='approveComplaint2'>Approve</button>
-                                                <button type='submit' class='btn btn-danger' name='disapproveComplaint2'>Disapprove</button>
+                                                <button type='submit' class='btn btn-success' name='approveComplaintS'>Approve</button>
+                                                <button type='submit' class='btn btn-danger' name='disapproveComplaintS'>Disapprove</button>
                                             </div>
                                         </form>
                                     </div>

@@ -3,6 +3,9 @@ session_start();
 include '../php/server.php';
 include '../php/onload.php';
 
+if($_SESSION["role"] != 3){
+  exit();
+}
 ?>
 
 

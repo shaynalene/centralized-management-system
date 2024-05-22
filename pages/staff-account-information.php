@@ -1,15 +1,11 @@
-<!-- 
-    COMMENTS:
-    1. fix the fonts
-    2. file upload field design
-    3. ratio of the avatar  
-    4. update and change buttons
-    
--->
 <?php
 session_start();
 include '../php/server.php';
 include '../php/onload.php';
+
+if($_SESSION["role"] != 2){
+  exit();
+}
 
 
 //submit image

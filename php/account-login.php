@@ -1,8 +1,3 @@
-<!-- TO DO:
-    1. declare here the variables needed
-    2. fix the links depending on the user type
-    3. fix the email prompt in forgot password
--->
 <?php
 session_start();
 include '../php/server.php';

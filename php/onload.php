@@ -23,6 +23,7 @@ $name = $firstname . ' ' . $middlename . ' ' . $lastname;
 $birthday = $row["birthday"];
 $email = $row["email"];
 $number = $row["contact_number"];
+$role = $row["role"];
 
 //session
 $_SESSION['firstname'] = $firstname;
@@ -30,6 +31,7 @@ $_SESSION['middlename'] = $middlename;
 $_SESSION["lastname"] = $lastname;
 $_SESSION["name"] = $name;
 $_SESSION["email"] = $email;
+$_SESSION["role"] = $role;
 
 //account role
 $account_id = $_SESSION["account_id"];
