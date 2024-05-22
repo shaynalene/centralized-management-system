@@ -23,7 +23,7 @@ $name = $firstname . ' ' . $middlename . ' ' . $lastname;
 $birthday = $row["birthday"];
 $email = $row["email"];
 $number = $row["contact_number"];
-$role = $row["role"];
+$role = $row["role_id"];
 
 //session
 $_SESSION['firstname'] = $firstname;
