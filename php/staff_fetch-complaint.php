@@ -125,8 +125,8 @@ if ($result->num_rows > 0) {
                                                 <input type='text' class='form-control' value='". $update_message . "' readonly/>
                                             </div>
                                             <div class='modal-footer'>
-                                                <button type='submit' class='btn btn-success' name='approveComplaint'>Approve</button>
-                                                <button type='submit' class='btn btn-danger' name='disapproveComplaint'>Disapprove</button>
+                                                <button type='submit' class='btn btn-success' name='approveComplaint2'>Approve</button>
+                                                <button type='submit' class='btn btn-danger' name='disapproveComplaint2'>Disapprove</button>
                                             </div>
                                         </form>
                                     </div>
