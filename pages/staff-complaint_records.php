@@ -158,7 +158,7 @@ include "../php/onload.php";
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="../pages/staff_side-complaint_records.php" class="active-link nav-link active">
+                    <a href="../pages/staff-complaint_records.php" class="active-link nav-link active">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Complaint Records</p>
                     </a>
